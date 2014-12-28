@@ -29,7 +29,7 @@ public class SmartEnemy extends GameObject{
                 player = handler.object.get(i);
             }
         }
-
+        velY = 5;
     }
     
     public Rectangle getBounds(){
@@ -44,8 +44,8 @@ public class SmartEnemy extends GameObject{
         float diffY = y - player.getY() - 16;
         float distance = (float) Math.sqrt((x - player.getX())*(x - player.getX()) + (y - player.getY())*(y - player.getY()));
         
-        velX = (int) ((-1.0/distance)* diffX);
-        velY = (int) ((-1.0/distance)* diffY);
+        velX = ((-1/distance)* diffX);
+        velY = ((-1/distance)* diffY);
         
         //bounds
         //if(y <= 0 || y >= Game.HEIGHT-32) velY *= -1;
